@@ -11,3 +11,5 @@ This project has used Flickity carousel for the carousels/sliders, a mix of CSS 
 I built the custom feedback messages after researching something similar to solid-toast. It uses a PHP session that is set upon successful task completion and is unset afterwards to allow it to echo out the toast div.
 
 *To test the ticket booking functionality, log into the admin account and click generate showtimes button on the 'Movie Management' page within the admin panel on any movie(will work for all); this will generate showtimes in all 4 cinemas for the week; you can then log out and sign in to the adult account to carry out the booking process.*
+
+Most of the JavaScript has been found either in StackOverflow, off the shelf from W3Schools, or in Web Development threads/communities in which I have asked for help; however, this was allowed within the project as the main focus was on the php & SQL functionality. 
