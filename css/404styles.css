@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --colour-background: #101720;
+  --colour-text: #f8f8f8;
+  --colour-accent: #a953ff;
+  --color-light-gray: #4a5568;
+  --color-dark-gray: #2d3748;
+  --colour-accent-hover: #8a2be2;
+  --font-primary: "Anek Devanagari", sans-serif;
+  --font-secondary: "Manrope", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--colour-background);
+  color: var(--colour-text);
+  font-family: var(--font-primary);
+}
+
+.main-content {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.error-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--colour-text);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.zero {
+  color: var(--colour-accent);
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: var(--colour-accent);
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.error-description {
+  font-size: 1rem;
+  color: var(--colour-text);
+  margin-bottom: 2rem;
+  font-family: var(--font-secondary);
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--colour-accent);
+  color: var(--colour-text);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: var(--font-secondary);
+}
+
+.home-button:hover {
+  background-color: var(--colour-accent-hover);
+}
+
+.footer {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  font-family: var(--font-secondary);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-map h3 {
+  color: var(--colour-accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.site-map a {
+  color: var(--colour-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.site-map a:hover {
+  color: var(--colour-accent);
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: var(--colour-text);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--colour-accent);
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--colour-accent);
+  color: var(--colour-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.contact-button:hover {
+  background-color: var(--colour-accent-hover);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-map {
+    align-items: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+}

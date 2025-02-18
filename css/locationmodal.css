@@ -1,0 +1,95 @@
+/* CSS for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--colour-background);
+  margin: 15% auto;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid var(--colour-accent);
+  border-radius: 8px;
+  position: relative;
+  animation: modalSlideDown 0.4s;
+}
+
+@keyframes modalSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid var(--colour-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--colour-text);
+  font-size: 1.2rem;
+}
+
+.close {
+  color: var(--colour-text);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--colour-accent);
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.cinema-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.cinema-button {
+  background-color: var(--colour-background);
+  border: 1px solid var(--colour-accent);
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--colour-text);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.cinema-button strong {
+  font-size: 1.1rem;
+}
+
+.cinema-button small {
+  opacity: 0.8;
+}
+
+.cinema-button:hover {
+  background-color: var(--colour-accent);
+  color: var(--colour-background);
+}

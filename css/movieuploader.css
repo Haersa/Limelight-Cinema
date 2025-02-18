@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --colour-background: #ffffff;
+  --warning-background-color: #000000;
+  --colour-text: #000000;
+  --colour-accent: #0066cc;
+  --colour-accent-hover: #004d99;
+  --colour-warning: #ff4136;
+  --font-primary: "Manrope", sans-serif;
+  --font-secondary: "Anek Devanagari", sans-serif;
+  --font-size: 16px;
+  --transition-speed: 500ms;
+}
+
+/* toast messages */
+
+/* success toast */
+.successtoast {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 300px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  text-align: left;
+  border-left: 4px solid #4caf50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  overflow: hidden;
+  animation: dropIn 0.5s ease-out forwards, bounce 0.5s ease-in-out 0.5s,
+    fadeOut 0.5s ease-in 3.5s forwards;
+}
+
+.successtoast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #4caf50;
+  animation: countdown 2.5s linear 1s forwards;
+}
+
+.successtoast i {
+  color: #4caf50;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-size: 1.2em;
+  float: right;
+}
+
+/* end of success toast */
+
+/* failed toast */
+
+.failedtoast {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 300px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  text-align: left;
+  border-left: 4px solid #f44336;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  overflow: hidden;
+  animation: dropIn 0.5s ease-out forwards, bounce 0.5s ease-in-out 0.5s,
+    fadeOut 0.5s ease-in 3.5s forwards;
+}
+
+.failedtoast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f44336;
+  animation: countdown 2.5s linear 1s forwards;
+}
+
+.failedtoast i {
+  color: #f44336;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-size: 1.2em;
+  float: right;
+}
+
+/* make sure only one icon is displayed */
+.failedtoast i:not(:last-child) {
+  display: none;
+}
+
+/* end of failed toast */
+
+/* end of toast messages */
+
+@keyframes dropIn {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-secondary);
+  background-color: var(--colour-background);
+  color: var(--colour-text);
+}
+
+.alert-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.AdminAlert {
+  font-size: 1.5rem;
+  background-color: rgba(255, 65, 54, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 80%;
+  animation: flashBorder 1s infinite alternate;
+}
+
+.AdminAlert h1 {
+  margin-top: 0;
+  font-family: var(--font-primary);
+  color: var(--colour-text);
+}
+
+.warning-icon {
+  font-size: 3rem;
+  color: var(--colour-warning);
+  margin-bottom: 1rem;
+  animation: flash 1s infinite alternate;
+}
+
+.back-to-home {
+  margin-top: 20px;
+  color: var(--colour-accent);
+  text-decoration: none;
+  font-family: var(--font-primary);
+}
+
+.back-to-home:hover {
+  text-decoration: underline;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes flashBorder {
+  from {
+    box-shadow: 0 0 0 2px var(--colour-warning);
+  }
+  to {
+    box-shadow: 0 0 0 6px var(--colour-warning);
+  }
+}
+
+/* Add a Movie Form Styles */
+.uploadwrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page-title {
+  color: var(--colour-accent);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.back-btn,
+.logout-btn {
+  color: var(--colour-accent);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  margin-bottom: 0.5rem;
+}
+
+.back-btn:hover,
+.logout-btn:hover {
+  color: var(--colour-accent-hover);
+}
+
+.uploadcard {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadform {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.filedisclaimer {
+  font-family: var(--font-primary);
+  color: var(--colour-text);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.uploadform input,
+.uploadform textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  box-sizing: border-box;
+}
+
+.uploadform textarea {
+  min-height: 100px;
+  resize: vertical;
+  flex-grow: 1;
+}
+
+.uploadform input[type="file"] {
+  padding: 5px;
+}
+
+.uploadform input[type="file"]::file-selector-button {
+  background-color: var(--colour-accent);
+  color: var(--colour-background);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.uploadform input[type="file"]::file-selector-button:hover {
+  background-color: var(--colour-accent-hover);
+}
+
+.uploadform .submitbtn {
+  background-color: var(--colour-accent);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+
+.uploadform .submitbtn:hover {
+  background-color: var(--colour-accent-hover);
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.rating-label {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--colour-text);
+}
+
+.rating-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-input input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+}
+
+.rating-stars i {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.rating-max {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--colour-text);
+}
+
+/* Responsive adjustments for rating input */
+@media screen and (max-width: 480px) {
+  .rating-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rating-stars {
+    margin-top: 5px;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .uploadwrapper {
+    padding: 15px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .back-btn,
+  .logout-btn {
+    margin-bottom: 1rem;
+  }
+
+  .uploadcard {
+    padding: 15px;
+  }
+
+  .uploadform input,
+  .uploadform textarea {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .uploadform input[type="file"]::file-selector-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
