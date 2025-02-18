@@ -1,6 +1,6 @@
 # Limelight-Cinema
 
-
+![Limelight Cinema Screenshot](projectoverview.PNG)
 
 
 ## Project Overview
