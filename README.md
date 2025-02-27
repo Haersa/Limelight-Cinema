@@ -41,3 +41,6 @@ To test the ticket booking functionality:
 3. This will generate showtimes in all 4 cinemas for the week
 4. Log out and sign in to the adult account to carry out the booking process
 
+## Live Demo
+
+You can view the live project [here]([http://webdev.edinburghcollege.ac.uk/~HNCWEBMR11/BikeKingBorders/index.html](http://webdev.edinburghcollege.ac.uk/~HNCWEBMR11/level8php/limelightcinema/)) or check out the code in the repository.
