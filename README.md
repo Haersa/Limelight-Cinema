@@ -43,5 +43,6 @@ To test the ticket booking functionality:
 
 ## Live Demo
 
-You can view the live project [here](http://webdev.edinburghcollege.ac.uk/~HNCWEBMR11/level8php/limelightcinema/) or check out the code in the repository.
+You can view the live project [here](http://webdev.edinburghcollege.ac.uk/HNCWEBMR11/level8php/limelightcinema/) or check out the code in the repository.
+
 
